@@ -1,0 +1,9 @@
+Exe file 프로세스
+(1)OPEN.CSVFILE 버튼
+파일 탐색기 열림 => input.csv(추론에 사용되는 csv file)선택 => inferencefilecsv버킷에 들어감 => csv file datagridview에 display & upload 성공 메시지 
+(2)PREDICTION 버튼
+전에 올린 csvfile S3에서 가져옴 => Lambda함수 실행(실제로는 람다 함수 2개 돌아감. 하나는 파라미터 전달용, 나머지 하나는 container로 배포한 모델 inference담당 람다) => result.csv로 저장한 결과 inferenceresultbucket에 저장 => Lambda function executed successfully! 메시지 뜸 => Do you want to display the CSV file? 메시지 뜸 => 확인 누름 => 결과  datagridview로 뜸
+
+주의사항
+-인터넷 환경에만 실행 가능
+-보안 상의 이유로 data는 실제 data가 아님
